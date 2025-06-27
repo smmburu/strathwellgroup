@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strathwell Group - Latest News & Updates</title>
+<meta name="description" content="Stay informed about the latest developments across Strathwell Group's portfolio of companies.">
+<meta name="keywords" content="Strathwell Group, news, updates, press releases, company news, industry updates">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1A2238',secondary:'#2E5A8B',skyblue:'#4B9FD3',charcoal:'#333333'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Open Sans', sans-serif;
+color: #333333;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif;
+}
+.dropdown-content {
+display: none;
+position: absolute;
+min-width: 240px;
+z-index: 50;
+top: 100%;
+left: 0;
+}
+.dropdown:hover .dropdown-content {
+display: block;
+}
+.language-dropdown-content {
+display: none;
+position: absolute;
+min-width: 160px;
+z-index: 50;
+top: 100%;
+right: 0;
+}
+.language-dropdown:hover .language-dropdown-content {
+display: block;
+}
+input:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #4B9FD3;
+}
+.custom-checkbox {
+position: relative;
+padding-left: 28px;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #1A2238;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #f0f0f0;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #1A2238;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-select {
+position: relative;
+}
+.custom-select select {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+.custom-select::after {
+content: "";
+position: absolute;
+right: 12px;
+top: 50%;
+transform: translateY(-50%);
+width: 0;
+height: 0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-top: 5px solid #1A2238;
+pointer-events: none;
+}
+.custom-date-range {
+position: relative;
+}
+.date-range-picker {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 50;
+width: 300px;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+padding: 16px;
+margin-top: 8px;
+}
+.custom-radio {
+position: relative;
+padding-left: 28px;
+cursor: pointer;
+user-select: none;
+display: inline-block;
+margin-right: 16px;
+}
+.custom-radio input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.radio-checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #1A2238;
+border-radius: 50%;
+}
+.custom-radio:hover input ~ .radio-checkmark {
+background-color: #f0f0f0;
+}
+.custom-radio input:checked ~ .radio-checkmark {
+background-color: #fff;
+}
+.radio-checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-radio input:checked ~ .radio-checkmark:after {
+display: block;
+}
+.custom-radio .radio-checkmark:after {
+top: 3px;
+left: 3px;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: #1A2238;
+}
+.pagination-item {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 8px;
+}
+.pagination-item.active {
+background-color: #1A2238;
+color: white;
+}
+.pagination-item:not(.active):hover {
+background-color: #f0f0f0;
+}
+.news-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.skeleton {
+animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+0% {
+background-color: rgba(206, 212, 218, 0.1);
+}
+100% {
+background-color: rgba(206, 212, 218, 0.3);
+}
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header & Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center justify-between">
+  <div class="flex items-center flex-shrink-0">
+    <a href="#" class="text-2xl font-['Pacifico'] text-primary mr-6">Strathwell</a>
+  </div>
+  <div class="flex-grow flex justify-center">
+    <nav class="hidden lg:flex space-x-4 text-sm">
+      <a href="https://readdy.ai/home/896461a9-7adb-415d-8a10-cbae890e8d1e/b046c633-c4ae-4631-82d8-61094a6cb625" data-readdy="true" class="text-charcoal font-medium hover:text-skyblue transition-colors">Home</a>
+      <a href="/about" class="text-charcoal font-medium hover:text-skyblue transition-colors">About</a>
+      <div class="dropdown relative">
+        <button class="text-charcoal font-medium hover:text-skyblue transition-colors flex items-center">
+          Our Companies
+          <div class="w-5 h-5 flex items-center justify-center ml-1">
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+        </button>
+        <div class="dropdown-content bg-white shadow-lg rounded-md py-2 mt-1">
+          <a href="https://festcareinsurance.netlify.app/" target="_blank" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+            <div class="flex items-center">
+              <div class="w-8 h-8 flex items-center justify-center mr-2 bg-skyblue rounded-full">
+                <i class="ri-shield-check-line text-white"></i>
+              </div>
+              <span>Festcare Insurance Agency</span>
+            </div>
+          </a>
+          <a href="https://kenyafmcg.netlify.app/" target="_blank" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+            <div class="flex items-center">
+              <div class="w-8 h-8 flex items-center justify-center mr-2 bg-secondary rounded-full">
+                <i class="ri-store-2-line text-white"></i>
+              </div>
+              <span>Kenya FMCG Wholesalers</span>
+            </div>
+          </a>
+          <a href="https://fadanconsultantltd.netlify.app/" target="_blank" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+            <div class="flex items-center">
+              <div class="w-8 h-8 flex items-center justify-center mr-2 bg-primary rounded-full">
+                <i class="ri-briefcase-4-line text-white"></i>
+              </div>
+              <span>Fadan Consultant Ltd</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a href="#" class="text-primary font-medium hover:text-skyblue transition-colors">News</a>
+      <a href="#" class="text-charcoal font-medium hover:text-skyblue transition-colors">Contact</a>
+    </nav>
+  </div>
+  <div class="flex items-center space-x-4">
+    <div class="language-dropdown relative hidden md:block">
+      <button class="flex items-center text-charcoal hover:text-skyblue transition-colors">
+        <div class="w-5 h-5 flex items-center justify-center mr-1">
+          <i class="ri-global-line"></i>
+        </div>
+        <span>EN</span>
+        <div class="w-5 h-5 flex items-center justify-center ml-1">
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+      </button>
+      <div class="language-dropdown-content bg-white shadow-lg rounded-md py-2 mt-1">
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+          <div class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-english-input"></i>
+            </div>
+            <span>English</span>
+          </div>
+        </a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+          <div class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-france-flag-line"></i>
+            </div>
+            <span>Français</span>
+          </div>
+        </a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+          <div class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-flag-line"></i>
+            </div>
+            <span>Kiswahili</span>
+          </div>
+        </a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+          <div class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-arabic-input"></i>
+            </div>
+            <span>العربية</span>
+          </div>
+        </a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
+          <div class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-chinese-input"></i>
+            </div>
+            <span>中文</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <button class="lg:hidden ml-4 text-charcoal" id="mobile-menu-button">
+      <div class="w-6 h-6 flex items-center justify-center">
+        <i class="ri-menu-line text-2xl"></i>
+      </div>
+    </button>
+  </div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+<nav class="flex flex-col space-y-3">
+<a href="https://readdy.ai/home/896461a9-7adb-415d-8a10-cbae890e8d1e/b046c633-c4ae-4631-82d8-61094a6cb625" data-readdy="true" class="text-charcoal font-medium hover:text-skyblue transition-colors">Home</a>
+<a href="/about" class="text-charcoal font-medium hover:text-skyblue transition-colors">About</a>
+<button class="text-charcoal font-medium hover:text-skyblue transition-colors text-left flex items-center justify-between" id="mobile-dropdown-button">
+Our Companies
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</button>
+<div id="mobile-dropdown" class="hidden pl-4 space-y-2">
+<a href="https://festcareinsurance.netlify.app/" target="_blank" class="block py-1 text-charcoal">
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-2 bg-skyblue rounded-full">
+<i class="ri-shield-check-line text-white text-xs"></i>
+</div>
+<span>Festcare Insurance Agency</span>
+</div>
+</a>
+<a href="https://kenyafmcg.netlify.app/" target="_blank" class="block py-1 text-charcoal">
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-2 bg-secondary rounded-full">
+<i class="ri-store-2-line text-white text-xs"></i>
+</div>
+<span>Kenya FMCG Wholesalers</span>
+</div>
+</a>
+<a href="https://fadanconsultantltd.netlify.app/" target="_blank" class="block py-1 text-charcoal">
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-2 bg-primary rounded-full">
+<i class="ri-briefcase-4-line text-white text-xs"></i>
+</div>
+<span>Fadan Consultant Ltd</span>
+</div>
+</a>
+</div>
+<a href="#" class="text-primary font-medium hover:text-skyblue transition-colors">News</a>
+<a href="#" class="text-charcoal font-medium hover:text-skyblue transition-colors">Contact</a>
+<div class="pt-2 border-t border-gray-200">
+<p class="text-sm text-gray-500 mb-2">Select Language</p>
+<div class="grid grid-cols-2 gap-2">
+<a href="#" class="flex items-center text-charcoal hover:text-skyblue">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-english-input"></i>
+</div>
+<span>English</span>
+</a>
+<a href="#" class="flex items-center text-charcoal hover:text-skyblue">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-france-flag-line"></i>
+</div>
+<span>Français</span>
+</a>
+<a href="#" class="flex items-center text-charcoal hover:text-skyblue">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-flag-line"></i>
+</div>
+<span>Kiswahili</span>
+</a>
+<a href="#" class="flex items-center text-charcoal hover:text-skyblue">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-arabic-input"></i>
+</div>
+<span>العربية</span>
+</a>
+<a href="#" class="flex items-center text-charcoal hover:text-skyblue">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-chinese-input"></i>
+</div>
+<span>中文</span>
+</a>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<!-- Page Header -->
+<section class="pt-24 bg-gradient-to-r from-primary/5 to-skyblue/5">
+<div class="container mx-auto px-4 py-12">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center text-sm text-gray-500 mb-4">
+<a href="https://readdy.ai/home/896461a9-7adb-415d-8a10-cbae890e8d1e/b046c633-c4ae-4631-82d8-61094a6cb625" data-readdy="true" class="hover:text-primary transition-colors">Home</a>
+<div class="w-4 h-4 flex items-center justify-center mx-1">
+<i class="ri-arrow-right-s-line"></i>
+</div>
+<span class="text-primary">News</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Latest News & Updates</h1>
+<p class="text-xl text-gray-600 mb-8">Stay informed about the latest developments, announcements, and insights from Strathwell Group and our portfolio companies.</p>
+<!-- Search and Filter Section -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-8">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1">
+<div class="relative">
+<input type="text" id="search-input" placeholder="Search news articles..." class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-md focus:border-skyblue">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-search-line"></i>
+</div>
+</div>
+</div>
+<div class="md:w-1/4">
+<div class="custom-select w-full">
+<select id="category-filter" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-skyblue pr-8">
+<option value="">All Categories</option>
+<option value="company-news">Company News</option>
+<option value="press-releases">Press Releases</option>
+<option value="industry-updates">Industry Updates</option>
+<option value="events">Events</option>
+</select>
+</div>
+</div>
+<div class="md:w-1/4">
+<div class="custom-date-range w-full">
+<button id="date-range-button" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-skyblue text-left flex items-center justify-between">
+<span id="date-range-text">All Time</span>
+<div class="w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-calendar-line"></i>
+</div>
+</button>
+<div id="date-range-picker" class="date-range-picker">
+<div class="mb-4">
+<h4 class="text-lg font-semibold text-primary mb-2">Date Range</h4>
+<div class="space-y-2">
+<label class="custom-radio">
+<input type="radio" name="date-range" value="all" checked>
+<span class="radio-checkmark"></span>
+<span>All Time</span>
+</label>
+<label class="custom-radio">
+<input type="radio" name="date-range" value="week">
+<span class="radio-checkmark"></span>
+<span>Past Week</span>
+</label>
+<label class="custom-radio">
+<input type="radio" name="date-range" value="month">
+<span class="radio-checkmark"></span>
+<span>Past Month</span>
+</label>
+<label class="custom-radio">
+<input type="radio" name="date-range" value="year">
+<span class="radio-checkmark"></span>
+<span>Past Year</span>
+</label>
+</div>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-semibold text-primary mb-2">Custom Range</h4>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-sm text-gray-600 mb-1">From</label>
+<input type="date" id="date-from" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-skyblue">
+</div>
+<div>
+<label class="block text-sm text-gray-600 mb-1">To</label>
+<input type="date" id="date-to" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-skyblue">
+</div>
+</div>
+</div>
+<div class="flex justify-between">
+<button id="clear-date-range" class="px-4 py-2 border border-gray-300 text-gray-600 rounded-button hover:bg-gray-50 transition-colors whitespace-nowrap">Clear</button>
+<button id="apply-date-range" class="px-4 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Apply</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Tags Section -->
+<section class="py-6 border-b border-gray-200">
+<div class="container mx-auto px-4">
+<div class="flex flex-wrap items-center gap-3">
+<div class="font-medium text-gray-600 mr-2">Quick Filters:</div>
+<button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap">All News</button>
+<button class="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">Company Updates</button>
+<button class="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">Press Releases</button>
+<button class="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">Industry News</button>
+<button class="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">Events</button>
+<div class="ml-auto flex items-center">
+<span class="text-gray-600 mr-2">Sort by:</span>
+<div class="custom-select">
+<select id="sort-order" class="px-3 py-2 border border-gray-300 rounded-md focus:border-skyblue pr-8 text-sm">
+<option value="newest">Newest First</option>
+<option value="oldest">Oldest First</option>
+<option value="relevance">Relevance</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News Grid -->
+<section class="py-12">
+<div class="container mx-auto px-4">
+<div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- News Item 1 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520business%2520executives%2520in%2520a%2520modern%2520office%2520setting%2520discussing%2520expansion%2520plans%252C%2520corporate%2520meeting%252C%2520professional%2520photography%252C%2520business%2520growth%2520concept%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news1&orientation=landscape" alt="Strathwell Group Expansion" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-skyblue/10 text-skyblue text-xs rounded-full">Company News</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>June 15, 2025</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Strathwell Group Announces Expansion into Southeast Asian Markets</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Strathwell Group has announced plans to expand its operations into key Southeast Asian markets, including Thailand, Vietnam, and Indonesia, as part of its strategic growth initiative for 2025-2026.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 2 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=business%2520partnership%2520handshake%2520between%2520executives%2520in%2520a%2520modern%2520corporate%2520setting%252C%2520professional%2520photography%252C%2520partnership%2520concept%252C%2520business%2520deal%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news2&orientation=landscape" alt="Strategic Partnership" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Press Release</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>May 28, 2025</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Festcare Insurance Forms Strategic Partnership with Global Reinsurer</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Festcare Insurance Agency, a subsidiary of Strathwell Group, has entered into a strategic partnership with a leading global reinsurer to enhance its risk management capabilities and expand its product offerings.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 3 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=sustainable%2520business%2520practices%2520in%2520a%2520modern%2520corporate%2520setting%252C%2520environmental%2520sustainability%2520in%2520business%252C%2520professional%2520photography%252C%2520green%2520business%2520initiatives%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news3&orientation=landscape" alt="Sustainability Initiative" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Sustainability</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>April 10, 2025</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Strathwell Group Launches Comprehensive Sustainability Initiative</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Strathwell Group has launched a comprehensive sustainability initiative aimed at reducing the environmental footprint of its operations and promoting sustainable business practices across its portfolio companies.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 4 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520business%2520conference%2520with%2520executives%2520presenting%2520to%2520audience%252C%2520corporate%2520event%252C%2520professional%2520photography%252C%2520business%2520presentation%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news4&orientation=landscape" alt="Annual Investor Conference" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-skyblue/10 text-skyblue text-xs rounded-full">Events</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>March 22, 2025</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Strathwell Group Hosts Annual Investor Conference in London</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Strathwell Group successfully hosted its annual investor conference in London, bringing together stakeholders, partners, and industry experts to discuss strategic initiatives and market opportunities.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 5 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=technology%2520innovation%2520in%2520business%2520with%2520executives%2520examining%2520digital%2520interface%252C%2520corporate%2520technology%252C%2520professional%2520photography%252C%2520digital%2520transformation%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news5&orientation=landscape" alt="Digital Transformation" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Press Release</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>February 18, 2025</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Kenya FMCG Wholesalers Completes Digital Transformation Project</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Kenya FMCG Wholesalers & Distributors Network Ltd has successfully completed its comprehensive digital transformation project, enhancing operational efficiency and customer experience.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 6 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=business%2520award%2520ceremony%2520with%2520executives%2520receiving%2520trophy%252C%2520corporate%2520achievement%252C%2520professional%2520photography%252C%2520business%2520recognition%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news6&orientation=landscape" alt="Industry Award" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Recognition</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>January 30, 2025</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Fadan Consultant Ltd Recognized as Top Business Consultancy in East Africa</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Fadan Consultant Ltd, a subsidiary of Strathwell Group, has been recognized as the top business consultancy in East Africa at the prestigious African Business Excellence Awards 2025.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 7 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=corporate%2520social%2520responsibility%2520with%2520executives%2520volunteering%2520in%2520community%252C%2520business%2520giving%2520back%252C%2520professional%2520photography%252C%2520community%2520engagement%252C%2520clean%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news7&orientation=landscape" alt="Community Initiative" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-skyblue/10 text-skyblue text-xs rounded-full">CSR</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>December 12, 2024</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Strathwell Group Launches Education Initiative in Underserved Communities</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">As part of its corporate social responsibility program, Strathwell Group has launched an education initiative aimed at improving access to quality education in underserved communities across Africa.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 8 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=financial%2520performance%2520chart%2520with%2520executives%2520analyzing%2520results%252C%2520corporate%2520finance%252C%2520professional%2520photography%252C%2520business%2520growth%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news8&orientation=landscape" alt="Financial Results" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Financial</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>November 28, 2024</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Strathwell Group Reports Strong Financial Performance for Q3 2024</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Strathwell Group has reported strong financial performance for the third quarter of 2024, with significant growth across its portfolio companies and increased market share in key regions.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 9 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=executive%2520appointment%2520with%2520professional%2520business%2520portrait%252C%2520corporate%2520leadership%252C%2520professional%2520photography%252C%2520business%2520executive%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news9&orientation=landscape" alt="Executive Appointment" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Leadership</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>October 15, 2024</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Strathwell Group Appoints New Chief Strategy Officer to Drive Global Growth</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Strathwell Group has appointed Dr. Eleanor Richardson as its new Chief Strategy Officer to lead the company's global expansion strategy and drive innovation across its portfolio companies.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 10 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=market%2520expansion%2520with%2520world%2520map%2520and%2520executives%2520planning%2520strategy%252C%2520global%2520business%252C%2520professional%2520photography%252C%2520international%2520expansion%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news10&orientation=landscape" alt="Market Expansion" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-skyblue/10 text-skyblue text-xs rounded-full">Company News</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>September 5, 2024</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Festcare Insurance Agency Enters West African Market with New Office in Ghana</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Festcare Insurance Agency, a subsidiary of Strathwell Group, has expanded its operations to West Africa with the opening of a new office in Accra, Ghana, marking a significant milestone in its regional growth strategy.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 11 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=industry%2520analysis%2520with%2520executives%2520reviewing%2520market%2520trends%252C%2520corporate%2520research%252C%2520professional%2520photography%252C%2520business%2520intelligence%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news11&orientation=landscape" alt="Industry Analysis" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Industry Insights</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>August 22, 2024</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Fadan Consultant Publishes Comprehensive Report on African Market Trends</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Fadan Consultant Ltd has published a comprehensive report on African market trends, providing valuable insights into emerging opportunities and challenges for businesses operating in the region.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- News Item 12 -->
+<div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=product%2520launch%2520with%2520executives%2520presenting%2520new%2520offering%252C%2520corporate%2520innovation%252C%2520professional%2520photography%252C%2520business%2520product%2520showcase%252C%2520clean%2520corporate%2520environment%252C%2520soft%2520natural%2520lighting&width=600&height=400&seq=strathwell_news12&orientation=landscape" alt="Product Launch" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Innovation</span>
+<div class="flex items-center text-sm text-gray-500">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-calendar-line"></i>
+</div>
+<span>July 10, 2024</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Kenya FMCG Launches Innovative Distribution Platform for Small Retailers</h3>
+<p class="text-gray-600 mb-4 line-clamp-3">Kenya FMCG Wholesalers & Distributors Network Ltd has launched an innovative distribution platform designed to empower small retailers with access to a wider range of products and competitive pricing.</p>
+<a href="#" class="inline-flex items-center text-skyblue hover:text-skyblue/80 font-medium">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div id="empty-state" class="hidden py-16 text-center">
+<div class="w-20 h-20 flex items-center justify-center bg-gray-100 rounded-full mx-auto mb-6">
+<i class="ri-file-search-line text-gray-400 text-4xl"></i>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-3">No Results Found</h3>
+<p class="text-gray-600 mb-6 max-w-md mx-auto">We couldn't find any news articles matching your search criteria. Try adjusting your filters or search terms.</p>
+<button id="clear-filters" class="px-6 py-3 bg-primary text-white font-semibold rounded-button hover:bg-primary/90 transition-colors shadow-md whitespace-nowrap">
+Clear All Filters
+</button>
+</div>
+<!-- Loading State (Hidden by default) -->
+<div id="loading-state" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 w-full skeleton"></div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<div class="h-6 w-24 skeleton rounded-full"></div>
+<div class="h-6 w-32 skeleton rounded-md"></div>
+</div>
+<div class="h-8 w-full skeleton rounded-md mb-3"></div>
+<div class="h-4 w-full skeleton rounded-md mb-2"></div>
+<div class="h-4 w-full skeleton rounded-md mb-2"></div>
+<div class="h-4 w-3/4 skeleton rounded-md mb-4"></div>
+<div class="h-6 w-28 skeleton rounded-md"></div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 w-full skeleton"></div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<div class="h-6 w-24 skeleton rounded-full"></div>
+<div class="h-6 w-32 skeleton rounded-md"></div>
+</div>
+<div class="h-8 w-full skeleton rounded-md mb-3"></div>
+<div class="h-4 w-full skeleton rounded-md mb-2"></div>
+<div class="h-4 w-full skeleton rounded-md mb-2"></div>
+<div class="h-4 w-3/4 skeleton rounded-md mb-4"></div>
+<div class="h-6 w-28 skeleton rounded-md"></div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 w-full skeleton"></div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<div class="h-6 w-24 skeleton rounded-full"></div>
+<div class="h-6 w-32 skeleton rounded-md"></div>
+</div>
+<div class="h-8 w-full skeleton rounded-md mb-3"></div>
+<div class="h-4 w-full skeleton rounded-md mb-2"></div>
+<div class="h-4 w-full skeleton rounded-md mb-2"></div>
+<div class="h-4 w-3/4 skeleton rounded-md mb-4"></div>
+<div class="h-6 w-28 skeleton rounded-md"></div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex flex-col md:flex-row items-center justify-between">
+<div class="mb-4 md:mb-0 text-gray-600">
+Showing <span class="font-medium">1-12</span> of <span class="font-medium">36</span> results
+</div>
+<div class="flex items-center">
+<button class="pagination-item mr-2 text-gray-500">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<button class="pagination-item active">1</button>
+<button class="pagination-item">2</button>
+<button class="pagination-item">3</button>
+<span class="mx-2 text-gray-400">...</span>
+<button class="pagination-item ml-2">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="mt-4 md:mt-0 flex items-center">
+<span class="text-gray-600 mr-2">Items per page:</span>
+<div class="custom-select">
+<select id="items-per-page" class="px-3 py-2 border border-gray-300 rounded-md focus:border-skyblue pr-8 text-sm">
+<option value="12">12</option>
+<option value="24">24</option>
+<option value="36">36</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-16 bg-gradient-to-r from-primary/5 to-skyblue/5">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold text-primary mb-4">Stay Updated</h2>
+<p class="text-lg text-gray-600 mb-8">Subscribe to our newsletter to receive the latest news and updates directly in your inbox.</p>
+<div class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-l-md border-none shadow-md">
+<button class="px-6 py-3 bg-primary text-white font-semibold rounded-r-md hover:bg-primary/90 transition-colors shadow-md whitespace-nowrap">Subscribe</button>
+</div>
+<p class="text-sm text-gray-500 mt-4">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Strathwell</a>
+<p class="text-white/80 mb-6">A globally present holding company with a vision to create sustainable value through strategic investments and operational excellence.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-linkedin-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-twitter-x-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-facebook-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-instagram-fill text-white"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/896461a9-7adb-415d-8a10-cbae890e8d1e/b046c633-c4ae-4631-82d8-61094a6cb625" data-readdy="true" class="text-white/80 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-white/80 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-white/80 hover:text-white transition-colors">Our Companies</a></li>
+<li><a href="#" class="text-white/80 hover:text-white transition-colors">News & Updates</a></li>
+<li><a href="#" class="text-white/80 hover:text-white transition-colors">Contact Us</a></li>
+<li><a href="#" class="text-white/80 hover:text-white transition-colors">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-6">Our Companies</h4>
+<ul class="space-y-3">
+<li><a href="https://festcareinsurance.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Festcare Insurance Agency</a></li>
+<li><a href="https://kenyafmcg.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Kenya FMCG Wholesalers</a></li>
+<li><a href="https://fadanconsultantltd.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Fadan Consultant Ltd</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-6">Newsletter</h4>
+<p class="text-white/80 mb-4">Subscribe to our newsletter to receive the latest updates and news.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-3 rounded-l-md w-full text-charcoal border-none">
+<button type="submit" class="bg-skyblue hover:bg-skyblue/90 text-white px-4 py-3 rounded-r-md whitespace-nowrap">Subscribe</button>
+</div>
+</form>
+<p class="text-white/60 text-sm">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-white/60 text-sm mb-4 md:mb-0">&copy; 2025 Strathwell Group. All rights reserved.</p>
+<div class="flex space-x-4 text-sm text-white/60">
+<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+<a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+const mobileDropdown = document.getElementById('mobile-dropdown');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuButton.querySelector('i');
+if (mobileMenu.classList.contains('hidden')) {
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+} else {
+icon.classList.remove('ri-menu-line');
+icon.classList.add('ri-close-line');
+}
+});
+mobileDropdownButton.addEventListener('click', function() {
+mobileDropdown.classList.toggle('hidden');
+const icon = mobileDropdownButton.querySelector('i');
+if (mobileDropdown.classList.contains('hidden')) {
+icon.classList.remove('ri-arrow-up-s-line');
+icon.classList.add('ri-arrow-down-s-line');
+} else {
+icon.classList.remove('ri-arrow-down-s-line');
+icon.classList.add('ri-arrow-up-s-line');
+}
+});
+});
+</script>
+<script id="date-range-picker-script">
+document.addEventListener('DOMContentLoaded', function() {
+const dateRangeButton = document.getElementById('date-range-button');
+const dateRangePicker = document.getElementById('date-range-picker');
+const dateRangeText = document.getElementById('date-range-text');
+const applyDateRange = document.getElementById('apply-date-range');
+const clearDateRange = document.getElementById('clear-date-range');
+const dateRadios = document.querySelectorAll('input[name="date-range"]');
+const dateFrom = document.getElementById('date-from');
+const dateTo = document.getElementById('date-to');
+// Set default dates
+const today = new Date();
+dateTo.valueAsDate = today;
+const oneMonthAgo = new Date();
+oneMonthAgo.setMonth(today.getMonth() - 1);
+dateFrom.valueAsDate = oneMonthAgo;
+dateRangeButton.addEventListener('click', function() {
+dateRangePicker.style.display = dateRangePicker.style.display === 'block' ? 'none' : 'block';
+});
+// Close the date picker when clicking outside
+document.addEventListener('click', function(event) {
+if (!dateRangeButton.contains(event.target) && !dateRangePicker.contains(event.target)) {
+dateRangePicker.style.display = 'none';
+}
+});
+applyDateRange.addEventListener('click', function() {
+let selectedOption;
+dateRadios.forEach(radio => {
+if (radio.checked) {
+selectedOption = radio.value;
+}
+});
+if (selectedOption === 'all') {
+dateRangeText.textContent = 'All Time';
+} else if (selectedOption === 'week') {
+dateRangeText.textContent = 'Past Week';
+} else if (selectedOption === 'month') {
+dateRangeText.textContent = 'Past Month';
+} else if (selectedOption === 'year') {
+dateRangeText.textContent = 'Past Year';
+} else {
+// Custom date range
+if (dateFrom.value && dateTo.value) {
+const fromDate = new Date(dateFrom.value);
+const toDate = new Date(dateTo.value);
+dateRangeText.textContent = `${fromDate.toLocaleDateString()} - ${toDate.toLocaleDateString()}`;
+}
+}
+dateRangePicker.style.display = 'none';
+// Simulate loading state
+simulateLoading();
+});
+clearDateRange.addEventListener('click', function() {
+dateRadios[0].checked = true; // Select "All Time"
+dateFrom.value = '';
+dateTo.value = '';
+dateRangeText.textContent = 'All Time';
+});
+});
+</script>
+<script id="search-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.getElementById('search-input');
+const categoryFilter = document.getElementById('category-filter');
+const sortOrder = document.getElementById('sort-order');
+const itemsPerPage = document.getElementById('items-per-page');
+const clearFiltersBtn = document.getElementById('clear-filters');
+const newsGrid = document.getElementById('news-grid');
+const emptyState = document.getElementById('empty-state');
+const loadingState = document.getElementById('loading-state');
+const filterButtons = document.querySelectorAll('button[class*="rounded-full"]');
+// Function to simulate loading state
+window.simulateLoading = function() {
+newsGrid.style.display = 'none';
+emptyState.style.display = 'none';
+loadingState.style.display = 'grid';
+setTimeout(function() {
+loadingState.style.display = 'none';
+// Random chance to show empty state for demo purposes
+if (Math.random() > 0.9) {
+emptyState.style.display = 'block';
+} else {
+newsGrid.style.display = 'grid';
+}
+}, 1000);
+};
+// Event listeners for filters
+searchInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+simulateLoading();
+}
+});
+categoryFilter.addEventListener('change', function() {
+simulateLoading();
+});
+sortOrder.addEventListener('change', function() {
+simulateLoading();
+});
+itemsPerPage.addEventListener('change', function() {
+simulateLoading();
+});
+clearFiltersBtn.addEventListener('click', function() {
+searchInput.value = '';
+categoryFilter.selectedIndex = 0;
+sortOrder.selectedIndex = 0;
+itemsPerPage.selectedIndex = 0;
+document.getElementById('date-range-text').textContent = 'All Time';
+filterButtons[0].classList.add('bg-primary', 'text-white');
+filterButtons[0].classList.remove('bg-white', 'border', 'border-gray-300', 'text-gray-600');
+for (let i = 1; i < filterButtons.length; i++) {
+filterButtons[i].classList.remove('bg-primary', 'text-white');
+filterButtons[i].classList.add('bg-white', 'border', 'border-gray-300', 'text-gray-600');
+}
+simulateLoading();
+});
+// Filter tag buttons
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+filterButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('bg-white', 'border', 'border-gray-300', 'text-gray-600');
+});
+this.classList.remove('bg-white', 'border', 'border-gray-300', 'text-gray-600');
+this.classList.add('bg-primary', 'text-white');
+simulateLoading();
+});
+});
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Desktop dropdown toggle for "Our Companies"
+  const dropdownButtons = document.querySelectorAll('.dropdown > button');
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const dropdownContent = this.nextElementSibling;
+      if (!dropdownContent) return;
+      const isVisible = dropdownContent.style.display === 'block';
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown-content').forEach(dc => dc.style.display = 'none');
+      if (!isVisible) {
+        dropdownContent.style.display = 'block';
+      }
+    });
+  });
+
+  // Close dropdown if clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-content').forEach(dc => dc.style.display = 'none');
+    }
+  });
+
+  // Mobile dropdown toggle (existing)
+  const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+  const mobileDropdown = document.getElementById('mobile-dropdown');
+  if (mobileDropdownButton && mobileDropdown) {
+    mobileDropdownButton.addEventListener('click', function() {
+      if (mobileDropdown.classList.contains('hidden')) {
+        mobileDropdown.classList.remove('hidden');
+      } else {
+        mobileDropdown.classList.add('hidden');
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

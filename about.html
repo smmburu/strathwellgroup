@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Us - Strathwell Group</title>
+<meta name="description" content="Learn more about Strathwell Group, our vision, mission, values, and leadership team." />
+<meta name="keywords" content="Strathwell Group, About Us, Leadership, Vision, Mission, Values" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#1A2238',
+          secondary: '#2E5A8B',
+          skyblue: '#4B9FD3',
+          charcoal: '#333333',
+        },
+        borderRadius: {
+          none: '0px',
+          sm: '4px',
+          DEFAULT: '8px',
+          md: '12px',
+          lg: '16px',
+          xl: '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          full: '9999px',
+          button: '8px',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .leader-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgb(26 34 56 / 0.1),
+      0 4px 6px -2px rgb(26 34 56 / 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  .leader-card:hover {
+    box-shadow: 0 20px 25px -5px rgb(26 34 56 / 0.2),
+      0 10px 10px -5px rgb(26 34 56 / 0.1);
+  }
+  .leader-info {
+    padding: 2rem;
+    text-align: center;
+  }
+  .leader-photo {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 6px rgb(26 34 56 / 0.1);
+  }
+  .leader-hover-content {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .leader-card:hover .leader-hover-content {
+    opacity: 1;
+  }
+  .social-links a {
+    margin: 0 0.5rem;
+    color: #1a2238;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #4b9fd3;
+  }
+</style>
+</head>
+<body class="bg-white">
+<!-- Header & Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-center">
+    <a href="INDEX.html" class="text-2xl font-['Pacifico'] text-primary mr-8">Strathwell</a>
+    <nav class="hidden lg:flex space-x-4 text-sm font-medium text-charcoal">
+      <a href="INDEX.html" class="hover:text-skyblue transition-colors">Home</a>
+      <a href="about.html" class="text-primary hover:text-skyblue transition-colors">About Us</a>
+      <<edit_file>
+<path>about.html</path>
+<content>
+<<<<<<< SEARCH
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="INDEX.html" class="text-2xl font-['Pacifico'] text-primary">Strathwell</a>
+    <nav class="hidden lg:flex space-x-6 text-sm font-medium text-charcoal">
+      <a href="INDEX.html" class="hover:text-skyblue transition-colors">Home</a>
+      <a href="about.html" class="text-primary hover:text-skyblue transition-colors">About Us</a>
+      <a href="#our-companies" class="hover:text-skyblue transition-colors">Our Companies</a>
+      <a href="#news" class="hover:text-skyblue transition-colors">News</a>
+      <a href="#contact" class="hover:text-skyblue transition-colors">Contact</a>
+    </nav>
+  </div>
+</header>
+=======
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-center">
+    <a href="INDEX.html" class="text-2xl font-['Pacifico'] text-primary mr-8">Strathwell</a>
+    <nav class="hidden lg:flex space-x-4 text-sm font-medium text-charcoal">
+      <a href="INDEX.html" class="hover:text-skyblue transition-colors">Home</a>
+      <a href="about.html" class="text-primary hover:text-skyblue transition-colors">About Us</a>
+      <a href="#our-companies" class="hover:text-skyblue transition-colors">Our Companies</a>
+      <a href="#news" class="hover:text-skyblue transition-colors">News</a>
+      <a href="#contact" class="hover:text-skyblue transition-colors">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="pt-24">
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-r from-primary/90 to-primary/30 text-white"
+    style="background-image: url('https://readdy.ai/api/search-image?query=modern%20corporate%20cityscape%20with%20interconnected%20business%20buildings%2C%20professional%20architectural%20photography%2C%20dramatic%20lighting%2C%20global%20business%20concept&width=1920&height=1080&seq=strathwell_about_hero&orientation=landscape'); background-size: cover; background-position: center;"
+  >
+    <div class="container mx-auto px-4 py-32 max-w-4xl">
+      <h1 class="text-5xl font-bold mb-4 leading-tight">
+        About Strathwell Group
+      </h1>
+      <p class="text-xl max-w-3xl">
+        Connecting businesses, empowering growth, and creating sustainable value
+        across global markets.
+      </p>
+    </div>
+  </section>
+  <!-- Company Overview -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 max-w-4xl text-center mb-16">
+      <h2 class="text-4xl font-bold text-primary mb-6">Company Overview</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Strathwell Group is a globally integrated holding company that strategically
+        invests in and operates businesses across key sectors. Our portfolio spans
+        insurance, distribution, and consulting services, creating synergies that drive
+        sustainable growth and value creation.
+      </p>
+    </div>
+  </section>
+  <!-- Strategic Pillars -->
+  <section class="py-20 bg-gradient-to-br from-primary/5 to-skyblue/5">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-4xl font-bold text-primary text-center mb-12">Strategic Pillars</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+            <i class="ri-line-chart-line text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">Sustainable Growth</h3>
+          <p class="text-gray-600">
+            Building lasting value through strategic investments and operational excellence.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-skyblue/10 rounded-full mb-6">
+            <i class="ri-global-line text-skyblue text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">Global Integration</h3>
+          <p class="text-gray-600">
+            Leveraging international networks to create cross-border opportunities.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-secondary/10 rounded-full mb-6">
+            <i class="ri-lightbulb-line text-secondary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">Innovation Focus</h3>
+          <p class="text-gray-600">
+            Embracing technology and new ideas to drive competitive advantage.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+            <i class="ri-team-line text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">People First</h3>
+          <p class="text-gray-600">
+            Investing in talent and fostering a culture of excellence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Value Creation Model -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-4xl font-bold text-primary text-center mb-12">Value Creation Model</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+            <i class="ri-search-line text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">Identify</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Market Analysis
+            </li>
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Opportunity Assessment
+            </li>
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Strategic Fit Evaluation
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-skyblue/10 rounded-full mb-6">
+            <i class="ri-tools-line text-skyblue text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">Transform</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Operational Excellence
+            </li>
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Technology Integration
+            </li>
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Talent Development
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 flex items-center justify-center bg-secondary/10 rounded-full mb-6">
+            <i class="ri-rocket-line text-secondary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-4">Scale</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Market Expansion
+            </li>
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Strategic Partnerships
+            </li>
+            <li class="flex items-center">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 text-skyblue">
+                <i class="ri-checkbox-circle-line"></i>
+              </div>
+              Sustainable Growth
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Company Leaders Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-4xl font-bold text-primary text-center mb-12">Company Leaders</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <!-- Leader 1 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/men/75.jpg"
+            alt="Festus Chunga"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Festus Chunga</h3>
+            <p class="text-secondary font-semibold">Group CEO & Founder</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Festus Chunga is a visionary leader with over 20 years of experience in global business development and strategic investments. He founded Strathwell Group to create sustainable value across industries.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/festuschunga" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/festuschunga" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/festuschunga" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 2 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/women/65.jpg"
+            alt="Alice Mwangi"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Alice Mwangi</h3>
+            <p class="text-secondary font-semibold">Chief Operating Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Alice Mwangi oversees daily operations and ensures the company meets its strategic goals with efficiency and excellence.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/alicemwangi" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/alicemwangi" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/alicemwangi" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 3 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/men/45.jpg"
+            alt="David Otieno"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">David Otieno</h3>
+            <p class="text-secondary font-semibold">Chief Financial Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              David Otieno manages the financial actions of the company, ensuring fiscal responsibility and strategic investment.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/davidotieno" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/davidotieno" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/davidotieno" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 4 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/women/55.jpg"
+            alt="Grace Njeri"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Grace Njeri</h3>
+            <p class="text-secondary font-semibold">Chief Marketing Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Grace Njeri leads the marketing strategies, brand development, and customer engagement initiatives.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/graceneri" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/graceneri" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/graceneri" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 5 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/men/35.jpg"
+            alt="Michael Kimani"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Michael Kimani</h3>
+            <p class="text-secondary font-semibold">Chief Technology Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Michael Kimani drives the technological innovation and IT infrastructure to support business growth.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/michaelkimani" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/michaelkimani" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/michaelkimani" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 6 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/women/45.jpg"
+            alt="Linda Wanjiru"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Linda Wanjiru</h3>
+            <p class="text-secondary font-semibold">Chief Human Resources Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Linda Wanjiru oversees talent acquisition, employee engagement, and organizational development.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/lindawanjiru" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/lindawanjiru" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/lindawanjiru" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 7 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/men/25.jpg"
+            alt="James Mwangi"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">James Mwangi</h3>
+            <p class="text-secondary font-semibold">Chief Legal Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              James Mwangi manages legal affairs, compliance, and corporate governance.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/jamesmwangi" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/jamesmwangi" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/jamesmwangi" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 8 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/women/35.jpg"
+            alt="Mary Kamau"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Mary Kamau</h3>
+            <p class="text-secondary font-semibold">Chief Communications Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Mary Kamau leads corporate communications, public relations, and brand messaging.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/marykamau" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/marykamau" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/marykamau" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 9 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/men/15.jpg"
+            alt="Peter Njoroge"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Peter Njoroge</h3>
+            <p class="text-secondary font-semibold">Chief Strategy Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Peter Njoroge drives strategic planning and business development initiatives.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/peternjoroge" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/peternjoroge" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/peternjoroge" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Leader 10 -->
+        <div class="leader-card group">
+          <img
+            src="https://randomuser.me/api/portraits/women/25.jpg"
+            alt="Susan Wairimu"
+            class="leader-photo"
+          />
+          <div class="leader-info">
+            <h3 class="text-xl font-bold text-primary">Susan Wairimu</h3>
+            <p class="text-secondary font-semibold">Chief Financial Officer</p>
+          </div>
+          <div class="leader-hover-content">
+            <p class="mb-4 text-gray-700">
+              Susan Wairimu manages financial planning, budgeting, and reporting to ensure fiscal health.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/susanwairimu" target="_blank" aria-label="LinkedIn"
+                ><i class="ri-linkedin-fill"></i
+              ></a>
+              <a href="https://twitter.com/susanwairimu" target="_blank" aria-label="Twitter"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="https://facebook.com/susanwairimu" target="_blank" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Global Footprint -->
+  <section class="py-20 bg-gradient-to-br from-primary/5 to-skyblue/5">
+    <div class="container mx-auto px-4 max-w-4xl text-center mb-16">
+      <h2 class="text-4xl font-bold text-primary mb-6">Global Footprint</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Strathwell Group operates across multiple continents, bringing our expertise and solutions to diverse markets worldwide.
+      </p>
+      <div class="relative h-[400px] rounded-xl overflow-hidden shadow-xl mt-12">
+        <div
+          class="absolute inset-0"
+          style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"
+        ></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h4 class="text-xl font-bold text-primary mb-2">Americas</h4>
+              <p class="text-gray-600">Headquarters: One Liberty Plaza, New York</p>
+              <p class="text-gray-600">Regional offices in Toronto, São Paulo</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h4 class="text-xl font-bold text-primary mb-2">Europe</h4>
+              <p class="text-gray-600">Regional HQ: London</p>
+              <p class="text-gray-600">Offices in Paris, Frankfurt, Madrid</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h4 class="text-xl font-bold text-primary mb-2">Africa</h4>
+              <p class="text-gray-600">Regional HQ: Nairobi</p>
+              <p class="text-gray-600">Presence in 5 countries</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h4 class="text-xl font-bold text-primary mb-2">Asia-Pacific</h4>
+              <p class="text-gray-600">Regional HQ: Singapore</p>
+              <p class="text-gray-600">Offices in Dubai, Mumbai, Shanghai</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8 mt-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="INDEX.html" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Strathwell</a>
+        <p class="text-white/80 mb-6">
+          A globally present holding company with a vision to create sustainable value through strategic investments and operational excellence.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+            <i class="ri-linkedin-fill text-white"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+            <i class="ri-twitter-x-fill text-white"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+            <i class="ri-facebook-fill text-white"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+            <i class="ri-instagram-fill text-white"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="INDEX.html" class="text-white/80 hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/80 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#our-companies" class="text-white/80 hover:text-white transition-colors">Our Companies</a></li>
+          <li><a href="#news" class="text-white/80 hover:text-white transition-colors">News & Updates</a></li>
+          <li><a href="#contact" class="text-white/80 hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="#" class="text-white/80 hover:text-white transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold mb-6">Our Companies</h4>
+        <ul class="space-y-3">
+          <li><a href="https://festcareinsurance.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Festcare Insurance Agency</a></li>
+          <li><a href="https://kenyafmcg.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Kenya FMCG Wholesalers</a></li>
+          <li><a href="https://fadanconsultantltd.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Fadan Consultant Ltd</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold mb-6">Newsletter</h4>
+        <p class="text-white/80 mb-4">Subscribe to our newsletter to receive the latest updates and news.</p>
+        <form class="mb-4">
+          <div class="flex">
+            <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-l-md w-full text-charcoal border-none" />
+            <button type="submit" class="bg-skyblue hover:bg-skyblue/90 text-white px-4 py-3 rounded-r-md whitespace-nowrap">
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <p class="text-white/60 text-sm">
+          By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+        </p>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/20">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white/60 text-sm mb-4 md:mb-0">&copy; 2025 Strathwell Group. All rights reserved.</p>
+        <div class="flex space-x-4 text-sm text-white/60">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
