@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-<button class="lg:hidden ml-4 text-charcoal" id="mobile-menu-button">
+<button class="lg:hidden ml-4 text-charcoal" id="mobile-menu-button" type="button" aria-label="Toggle mobile menu">
 <div class="w-6 h-6 flex items-center justify-center">
 <i class="ri-menu-line text-2xl"></i>
 </div>
@@ -296,14 +296,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav class="flex flex-col space-y-3">
 <a href="#" class="text-primary font-medium hover:text-skyblue transition-colors">Home</a>
 <a href="#about" class="text-charcoal font-medium hover:text-skyblue transition-colors">About</a>
-<button class="text-charcoal font-medium hover:text-skyblue transition-colors text-left flex items-center justify-between" id="mobile-dropdown-button">
+<button class="text-charcoal font-medium hover:text-skyblue transition-colors text-left flex items-center justify-between" id="mobile-dropdown-button" type="button" aria-expanded="false" aria-controls="mobile-dropdown" aria-label="Toggle Our Companies submenu">
 Our Companies
 <div class="w-5 h-5 flex items-center justify-center">
 <i class="ri-arrow-down-s-line"></i>
 </div>
 </button>
 <!-- Mobile Dropdown Our Companies -->
-<div id="mobile-dropdown" class="hidden pl-4 space-y-2">
+<div id="mobile-dropdown" class="hidden pl-4 space-y-2" role="region" aria-labelledby="mobile-dropdown-button">
 <a href="https://festcareinsurance.netlify.app/" target="_blank" class="block py-1 text-charcoal">
 <div class="flex items-center">
 <img src="assets/festcare-logo.png" alt="Festcare Logo" class="w-6 h-6 mr-2 rounded-full bg-white object-contain border" />
