@@ -24,12 +24,14 @@ font-family: 'Montserrat', sans-serif;
 }
 .dropdown-content {
 display: none;
+/* Removed position and other styles to keep layout consistent */
 position: absolute;
 min-width: 240px;
 z-index: 50;
 top: 100%;
 left: 0;
 }
+/* Removed CSS hover display to avoid conflict with JS */
 .dropdown:hover .dropdown-content {
 display: block;
 }
@@ -149,19 +151,19 @@ Our Companies
 <a href="https://festcareinsurance.netlify.app/" target="_blank" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
 <div class="flex items-center">
 <!-- Replace icon with logo -->
-<img src="assets/festcare-logo.png" alt="Festcare Logo" class="w-8 h-8 mr-2 rounded-full bg-white object-contain border" />
+              <img src="assets/Festcare - Insurance - Logo.png" alt="Festcare Logo" class="w-8 h-8 mr-2 rounded-full bg-white object-contain border" />
 <span>Festcare Insurance Agency</span>
 </div>
 </a>
 <a href="https://kenyafmcg.netlify.app/" target="_blank" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
 <div class="flex items-center">
-<img src="assets/kenyafmcg-logo.png" alt="Kenya FMCG Logo" class="w-8 h-8 mr-2 rounded-full bg-white object-contain border" />
+              <img src="assets/Kenya - FMCG - Logo.png" alt="Kenya FMCG Logo" class="w-8 h-8 mr-2 rounded-full bg-white object-contain border" />
 <span>Kenya FMCG Wholesalers</span>
 </div>
 </a>
 <a href="https://fadanconsultantltd.netlify.app/" target="_blank" class="block px-4 py-2 hover:bg-gray-100 text-charcoal">
 <div class="flex items-center">
-<img src="assets/fadan-logo.png" alt="Fadan Logo" class="w-8 h-8 mr-2 rounded-full bg-white object-contain border" />
+              <img src="assets/fadan - logo.png" alt="Fadan Logo" class="w-8 h-8 mr-2 rounded-full bg-white object-contain border" />
 <span>Fadan Consultant Ltd</span>
 </div>
 </a>
@@ -760,32 +762,49 @@ View All News
 <!-- Scripts -->
 <script id="mobile-menu-script">
 document.addEventListener('DOMContentLoaded', function() {
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
-const mobileDropdown = document.getElementById('mobile-dropdown');
-mobileMenuButton.addEventListener('click', function() {
-mobileMenu.classList.toggle('hidden');
-const icon = mobileMenuButton.querySelector('i');
-if (mobileMenu.classList.contains('hidden')) {
-icon.classList.remove('ri-close-line');
-icon.classList.add('ri-menu-line');
-} else {
-icon.classList.remove('ri-menu-line');
-icon.classList.add('ri-close-line');
-}
-});
-mobileDropdownButton.addEventListener('click', function() {
-mobileDropdown.classList.toggle('hidden');
-const icon = mobileDropdownButton.querySelector('i');
-if (mobileDropdown.classList.contains('hidden')) {
-icon.classList.remove('ri-arrow-up-s-line');
-icon.classList.add('ri-arrow-down-s-line');
-} else {
-icon.classList.remove('ri-arrow-down-s-line');
-icon.classList.add('ri-arrow-up-s-line');
-}
-});
+  // Desktop dropdown toggle for "Our Companies" with improved UX
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('button');
+    const content = dropdown.querySelector('.dropdown-content');
+    let hideTimeout;
+
+    function showDropdown() {
+      clearTimeout(hideTimeout);
+      content.style.display = 'block';
+    }
+
+    function hideDropdown() {
+      hideTimeout = setTimeout(() => {
+        content.style.display = 'none';
+      }, 300); // 300ms delay before hiding
+    }
+
+    button.addEventListener('mouseenter', showDropdown);
+    button.addEventListener('mouseleave', hideDropdown);
+    content.addEventListener('mouseenter', showDropdown);
+    content.addEventListener('mouseleave', hideDropdown);
+  });
+
+  // Close dropdown if clicking outside immediately
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-content').forEach(dc => dc.style.display = 'none');
+    }
+  });
+
+  // Mobile dropdown toggle (existing)
+  const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+  const mobileDropdown = document.getElementById('mobile-dropdown');
+  if (mobileDropdownButton && mobileDropdown) {
+    mobileDropdownButton.addEventListener('click', function() {
+      if (mobileDropdown.classList.contains('hidden')) {
+        mobileDropdown.classList.remove('hidden');
+      } else {
+        mobileDropdown.classList.add('hidden');
+      }
+    });
+  }
 });
 </script>
 <script id="contact-form-script">
