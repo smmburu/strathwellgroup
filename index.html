@@ -1382,20 +1382,65 @@ window.scrollTo(0, 0);
       "Office": "#3375FF"
     };
 
-    locations.forEach(function(loc) {
-      var marker = L.circleMarker(loc.coords, {
-        radius: 10,
-        fillColor: colors[loc.type],
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.9
-      }).addTo(map).bindPopup("<b>" + loc.name + "</b><br>" + loc.description);
+    // Define CSS class for animated marker
+    var animatedMarkerClass = 'animated-marker';
 
-      // Add permanent label for HQ
-      if (loc.type === "HQ") {
-        marker.bindTooltip(loc.name, {permanent: true, direction: "right", className: "leaflet-tooltip-label"}).openTooltip();
+    // Add CSS for animated marker
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = `
+      .${animatedMarkerClass} {
+        width: 20px;
+        height: 20px;
+        background-color: #FF5733;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 0 10px 2px #FF5733;
+        animation: pulse 2s infinite;
       }
+      .${animatedMarkerClass}.office {
+        background-color: #3375FF;
+        box-shadow: 0 0 10px 2px #3375FF;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(0.9);
+          opacity: 1;
+        }
+        70% {
+          transform: scale(1.2);
+          opacity: 0.7;
+        }
+
+        100% {
+          transform: scale(0.9);
+          opacity: 1;
+        }
+      }
+      .leaflet-tooltip-label {
+        background-color: transparent;
+        border: none;
+        color: #FF5733;
+        font-weight: bold;
+        font-size: 14px;
+        text-shadow: 1px 1px 2px #fff;
+      }
+    `;
+    document.getElementsByTagName('head')[0].appendChild(style);
+
+    locations.forEach(function(loc) {
+      var className = animatedMarkerClass;
+      if (loc.type === "Office") {
+        className += ' office';
+      }
+      var icon = L.divIcon({
+        className: className,
+        iconSize: [20, 20]
+      });
+      var marker = L.marker(loc.coords, {icon: icon}).addTo(map).bindPopup("<b>" + loc.name + "</b><br>" + loc.description);
+
+      // Add permanent label for all locations
+      marker.bindTooltip(loc.name, {permanent: true, direction: "right", className: "leaflet-tooltip-label"}).openTooltip();
     });
   });
 </script>
