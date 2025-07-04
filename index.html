@@ -1429,14 +1429,19 @@ window.scrollTo(0, 0);
     document.getElementsByTagName('head')[0].appendChild(style);
 
     locations.forEach(function(loc) {
-      var className = animatedMarkerClass;
-      if (loc.type === "Office") {
-        className += ' office';
-      }
-      var icon = L.divIcon({
-        className: className,
-        iconSize: [20, 20]
+      // Define icon URLs or use Leaflet default icon with color variants
+      var iconUrl = loc.type === "HQ" 
+        ? 'https://cdn-icons-png.flaticon.com/512/684/684908.png'  // HQ icon (red location pin)
+        : 'https://cdn-icons-png.flaticon.com/512/684/684908.png'; // Office icon (blue location pin) - can be same or different icon
+
+      // Create custom icon
+      var icon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [30, 30], // size of the icon
+        iconAnchor: [15, 30], // point of the icon which will correspond to marker's location
+        popupAnchor: [0, -30] // point from which the popup should open relative to the iconAnchor
       });
+
       var marker = L.marker(loc.coords, {icon: icon}).addTo(map).bindPopup("<b>" + loc.name + "</b><br>" + loc.description);
 
       // Add permanent label for all locations
