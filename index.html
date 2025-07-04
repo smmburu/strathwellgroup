@@ -1357,35 +1357,57 @@ window.scrollTo(0, 0);
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    var countries = {
-      "Kenya": [1.2921, 36.8219],
-      "Nigeria": [9.0820, 8.6753],
-      "South Africa": [-30.5595, 22.9375],
-      "Egypt": [26.8206, 30.8025],
-      "Morocco": [31.7917, -7.0926],
-      "United Kingdom": [55.3781, -3.4360],
-      "France": [46.6034, 1.8883],
-      "Germany": [51.1657, 10.4515],
-      "Spain": [40.4637, -3.7492],
-      "UAE": [23.4241, 53.8478],
-      "China": [35.8617, 104.1954],
-      "Singapore": [1.3521, 103.8198],
-      "India": [20.5937, 78.9629],
-      "United States": [37.0902, -95.7129],
-      "Canada": [56.1304, -106.3468],
-      "Brazil": [-14.2350, -51.9253]
+    var locations = [
+      {name: "Nairobi HQ", coords: [1.2921, 36.8219], type: "HQ", description: "Strathwell Group Headquarters, Nairobi, Kenya"},
+      {name: "Kenya Office", coords: [1.2921, 36.8219], type: "Office", description: "Kenya Office"},
+      {name: "Nigeria Office", coords: [9.0820, 8.6753], type: "Office", description: "Nigeria Office"},
+      {name: "South Africa Office", coords: [-30.5595, 22.9375], type: "Office", description: "South Africa Office"},
+      {name: "Egypt Office", coords: [26.8206, 30.8025], type: "Office", description: "Egypt Office"},
+      {name: "Morocco Office", coords: [31.7917, -7.0926], type: "Office", description: "Morocco Office"},
+      {name: "UK Office", coords: [55.3781, -3.4360], type: "Office", description: "United Kingdom Office"},
+      {name: "France Office", coords: [46.6034, 1.8883], type: "Office", description: "France Office"},
+      {name: "Germany Office", coords: [51.1657, 10.4515], type: "Office", description: "Germany Office"},
+      {name: "Spain Office", coords: [40.4637, -3.7492], type: "Office", description: "Spain Office"},
+      {name: "UAE Office", coords: [23.4241, 53.8478], type: "Office", description: "UAE Office"},
+      {name: "China Office", coords: [35.8617, 104.1954], type: "Office", description: "China Office"},
+      {name: "Singapore Office", coords: [1.3521, 103.8198], type: "Office", description: "Singapore Office"},
+      {name: "India Office", coords: [20.5937, 78.9629], type: "Office", description: "India Office"},
+      {name: "USA Office", coords: [37.0902, -95.7129], type: "Office", description: "United States Office"},
+      {name: "Canada Office", coords: [56.1304, -106.3468], type: "Office", description: "Canada Office"},
+      {name: "Brazil Office", coords: [-14.2350, -51.9253], type: "Office", description: "Brazil Office"}
+    ];
+
+    var colors = {
+      "HQ": "#FF5733",
+      "Office": "#3375FF"
     };
 
-    for (var country in countries) {
-      L.circleMarker(countries[country], {
-        radius: 8,
-        fillColor: "#1A2238",
-        color: "#4B9FD3",
-        weight: 2,
+    locations.forEach(function(loc) {
+      var marker = L.circleMarker(loc.coords, {
+        radius: 10,
+        fillColor: colors[loc.type],
+        color: "#000",
+        weight: 1,
         opacity: 1,
-        fillOpacity: 0.8
-      }).addTo(map).bindPopup(country);
-    }
+        fillOpacity: 0.9
+      }).addTo(map).bindPopup("<b>" + loc.name + "</b><br>" + loc.description);
+
+      // Add permanent label for HQ
+      if (loc.type === "HQ") {
+        marker.bindTooltip(loc.name, {permanent: true, direction: "right", className: "leaflet-tooltip-label"}).openTooltip();
+      }
+    });
+</script>
+<style>
+.leaflet-tooltip-label {
+  background-color: transparent;
+  border: none;
+  color: #FF5733;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px #fff;
+}
+</style>
   });
 </script>
 </body>
