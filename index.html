@@ -37,6 +37,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-o9N1jE2kP7kP1rjv+0s+Xb0Q5p1bQ+0h+0h+0h+0h+0h=" crossorigin=""/>
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#1A2238',secondary:'#2E5A8B',skyblue:'#4B9FD3',charcoal:'#333333'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <style>
@@ -648,8 +650,8 @@ Visit Website
 <p class="text-lg text-gray-600 max-w-3xl mx-auto">Strathwell Group operates across multiple continents, bringing our expertise and solutions to diverse markets worldwide.</p>
 </div>
 <div class="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
-<div class="absolute inset-0 bg-primary/5" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+<div id="global-presence-map" class="h-full w-full rounded-lg"></div>
+</div>
 <div class="absolute bottom-0 left-0 right-0 p-8">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="bg-white p-4 rounded-lg shadow-md">
@@ -667,7 +669,6 @@ Visit Website
 <div class="bg-white p-4 rounded-lg shadow-md">
 <h4 class="text-lg font-semibold text-primary mb-1">Americas</h4>
 <p class="text-gray-600 text-sm">United States, Canada, Brazil</p>
-</div>
 </div>
 </div>
 </div>
@@ -1344,6 +1345,48 @@ aboutPage.classList.remove('hidden');
 window.scrollTo(0, 0);
 });
 });
+</script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1jE2kP7kP1rjv+0s+Xb0Q5p1bQ+0h+0h+0h+0h+0h=" crossorigin=""></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var map = L.map('global-presence-map').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 5,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var countries = {
+      "Kenya": [1.2921, 36.8219],
+      "Nigeria": [9.0820, 8.6753],
+      "South Africa": [-30.5595, 22.9375],
+      "Egypt": [26.8206, 30.8025],
+      "Morocco": [31.7917, -7.0926],
+      "United Kingdom": [55.3781, -3.4360],
+      "France": [46.6034, 1.8883],
+      "Germany": [51.1657, 10.4515],
+      "Spain": [40.4637, -3.7492],
+      "UAE": [23.4241, 53.8478],
+      "China": [35.8617, 104.1954],
+      "Singapore": [1.3521, 103.8198],
+      "India": [20.5937, 78.9629],
+      "United States": [37.0902, -95.7129],
+      "Canada": [56.1304, -106.3468],
+      "Brazil": [-14.2350, -51.9253]
+    };
+
+    for (var country in countries) {
+      L.circleMarker(countries[country], {
+        radius: 8,
+        fillColor: "#1A2238",
+        color: "#4B9FD3",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).addTo(map).bindPopup(country);
+    }
+  });
 </script>
 </body>
 </html>
