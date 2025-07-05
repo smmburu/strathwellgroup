@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Strathwell Group - Latest News & Updates</title>
+<meta name="description" content="Stay informed about the latest developments across Strathwell Group's portfolio of companies." />
+<meta name="keywords" content="Strathwell Group, news, updates, press releases, company news, industry updates" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#1A2238',
+          secondary: '#2E5A8B',
+          skyblue: '#4B9FD3',
+          charcoal: '#333333',
+        },
+        borderRadius: {
+          none: '0px',
+          sm: '4px',
+          DEFAULT: '8px',
+          md: '12px',
+          lg: '16px',
+          xl: '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          full: '9999px',
+          button: '8px',
+        },
+      },
+    },
+  }
+</script>
+<style>
+  body {
+    font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
+    background: #f8fafc;
+  }
+  .font-pacifico {
+    font-family: 'Pacifico', cursive;
+  }
+</style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Navigation Bar -->
+  <nav class="bg-primary text-white shadow-lg">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="index.html" class="flex items-center space-x-2">
+        <span class="font-pacifico text-2xl tracking-wide">Strathwell Group</span>
+      </a>
+      <ul class="flex space-x-8 text-base font-medium">
+        <li><a href="index.html" class="hover:text-skyblue transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-skyblue transition">About</a></li>
+        <li><a href="services.html" class="hover:text-skyblue transition">Services</a></li>
+        <li><a href="news.html" class="text-skyblue font-semibold underline underline-offset-4">News</a></li>
+        <li><a href="contact.html" class="hover:text-skyblue transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-skyblue to-secondary py-16 mb-8">
+    <div class="container mx-auto px-4 flex flex-col items-center text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">Strathwell Group Newsroom</h1>
+      <p class="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl">Discover the latest stories, press releases, and updates from across our group of companies.</p>
+      <div class="flex flex-col md:flex-row gap-3 w-full max-w-xl">
+        <input type="text" placeholder="Search news..." class="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-skyblue outline-none transition" />
+        <select class="px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-skyblue outline-none transition">
+          <option>All Categories</option>
+          <option>Acquisitions</option>
+          <option>Events</option>
+          <option>Innovation</option>
+        </select>
+        <button class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-skyblue transition">Filter</button>
+      </div>
+    </div>
+    <div class="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+  </section>
+
+  <!-- All News Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl font-semibold text-primary">All News</h2>
+      <!-- "View All News" button is hidden here since we're already on the all news page -->
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Example News Card 1 -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-0 flex flex-col border border-gray-100 group">
+        <div class="relative">
+          <img src="https://source.unsplash.com/400x200/?business,office" alt="News 1" class="rounded-t-2xl w-full h-48 object-cover transition group-hover:scale-105 duration-300">
+          <span class="absolute top-4 left-4 bg-skyblue text-white text-xs px-3 py-1 rounded-full font-semibold shadow">Acquisition</span>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-bold mb-2 text-secondary group-hover:text-primary transition">Strathwell Group Acquires New Subsidiary</h3>
+          <p class="text-gray-600 mb-4 line-clamp-3">Strathwell Group expands its portfolio with the acquisition of XYZ Ltd, strengthening its position in the industry.</p>
+          <div class="flex items-center text-gray-400 text-sm mb-2">
+            <i class="ri-calendar-line mr-1"></i> Mar 18, 2024
+          </div>
+          <a href="news-detail.html?id=1" class="mt-auto inline-flex items-center text-skyblue font-semibold hover:underline">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Example News Card 2 -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-0 flex flex-col border border-gray-100 group">
+        <div class="relative">
+          <img src="https://source.unsplash.com/400x200/?meeting,teamwork" alt="News 2" class="rounded-t-2xl w-full h-48 object-cover transition group-hover:scale-105 duration-300">
+          <span class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full font-semibold shadow">Event</span>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-bold mb-2 text-secondary group-hover:text-primary transition">Annual General Meeting 2024 Announced</h3>
+          <p class="text-gray-600 mb-4 line-clamp-3">Join us for our AGM where we discuss our achievements and future plans. All stakeholders are welcome.</p>
+          <div class="flex items-center text-gray-400 text-sm mb-2">
+            <i class="ri-calendar-line mr-1"></i> Feb 10, 2024
+          </div>
+          <a href="news-detail.html?id=2" class="mt-auto inline-flex items-center text-skyblue font-semibold hover:underline">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Example News Card 3 -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-0 flex flex-col border border-gray-100 group">
+        <div class="relative">
+          <img src="https://source.unsplash.com/400x200/?innovation,technology" alt="News 3" class="rounded-t-2xl w-full h-48 object-cover transition group-hover:scale-105 duration-300">
+          <span class="absolute top-4 left-4 bg-primary text-white text-xs px-3 py-1 rounded-full font-semibold shadow">Innovation</span>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-bold mb-2 text-secondary group-hover:text-primary transition">Innovation Drives Growth in 2024</h3>
+          <p class="text-gray-600 mb-4 line-clamp-3">Our commitment to innovation has resulted in record growth and new opportunities for our partners.</p>
+          <div class="flex items-center text-gray-400 text-sm mb-2">
+            <i class="ri-calendar-line mr-1"></i> Jan 5, 2024
+          </div>
+          <a href="news-detail.html?id=3" class="mt-auto inline-flex items-center text-skyblue font-semibold hover:underline">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+      </div>
+      <!-- ...add more news cards as needed... -->
+    </div>
+    <!-- Pagination Controls -->
+    <div class="flex justify-center mt-12">
+      <nav class="inline-flex rounded-lg shadow-sm overflow-hidden border border-gray-200 bg-white">
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-skyblue transition"><i class="ri-arrow-left-s-line"></i></a>
+        <a href="#" class="px-4 py-2 text-primary font-bold bg-gray-100">1</a>
+        <a href="#" class="px-4 py-2 text-gray-700 hover:bg-gray-50">2</a>
+        <a href="#" class="px-4 py-2 text-gray-700 hover:bg-gray-50">3</a>
+        <span class="px-4 py-2 text-gray-400">...</span>
+        <a href="#" class="px-4 py-2 text-gray-700 hover:bg-gray-50">10</a>
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-skyblue transition"><i class="ri-arrow-right-s-line"></i></a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        &copy; <span id="year"></span> Strathwell Group. All rights reserved.
+      </div>
+      <div class="flex space-x-4">
+        <a href="https://twitter.com/" target="_blank" class="hover:text-skyblue"><i class="ri-twitter-fill"></i></a>
+        <a href="https://facebook.com/" target="_blank" class="hover:text-skyblue"><i class="ri-facebook-fill"></i></a>
+        <a href="https://linkedin.com/" target="_blank" class="hover:text-skyblue"><i class="ri-linkedin-fill"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
