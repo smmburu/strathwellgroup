@@ -219,7 +219,10 @@ background-color: rgba(206, 212, 218, 0.3);
 <div class="container mx-auto px-4 py-3">
 <div class="flex items-center justify-between">
   <div class="flex items-center flex-shrink-0">
-    <a href="#" class="text-2xl font-['Pacifico'] text-primary mr-6">Strathwell</a>
+    <a href="#" class="text-2xl font-['Pacifico'] text-primary mr-6">
+      <img src="assets/silverfest-logo.png" alt="Silverfest Logo" class="h-10 w-10 rounded-full inline-block align-middle mr-2" />
+      Silverfest
+    </a>
   </div>
   <div class="flex-grow flex justify-center">
     <nav class="hidden lg:flex space-x-4 text-sm">
@@ -483,7 +486,6 @@ Our Companies
 <div class="flex justify-between">
 <button id="clear-date-range" class="px-4 py-2 border border-gray-300 text-gray-600 rounded-button hover:bg-gray-50 transition-colors whitespace-nowrap">Clear</button>
 <button id="apply-date-range" class="px-4 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Apply</button>
-</div>
 </div>
 </div>
 </div>
@@ -900,7 +902,10 @@ Showing <span class="font-medium">1-12</span> of <span class="font-medium">36</s
 <div class="container mx-auto px-4">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 <div>
-<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Strathwell</a>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">
+  <img src="assets/silverfest-logo.png" alt="Silverfest Logo" class="h-10 w-10 rounded-full inline-block align-middle mr-2" />
+  Silverfest
+</a>
 <p class="text-white/80 mb-6">A globally present holding company with a vision to create sustainable value through strategic investments and operational excellence.</p>
 <div class="flex space-x-4">
 <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
@@ -990,11 +995,6 @@ icon.classList.remove('ri-arrow-down-s-line');
 icon.classList.add('ri-arrow-up-s-line');
 }
 });
-});
-</script>
-<script id="date-range-picker-script">
-document.addEventListener('DOMContentLoaded', function() {
-const dateRangeButton = document.getElementById('date-range-button');
 const dateRangePicker = document.getElementById('date-range-picker');
 const dateRangeText = document.getElementById('date-range-text');
 const applyDateRange = document.getElementById('apply-date-range');
