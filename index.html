@@ -44,7 +44,6 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#1A2238',secondary:'#2E5A8B',skyblue:'#4B9FD3',charcoal:'#333333',green:'#28a745',electricorange:'#ff6600'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#1A2238',secondary:'#2E5A8B',skyblue:'#4B9FD3',charcoal:'#333333',green:'#28a745',electricorange:'#ff6600'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -159,7 +158,8 @@ a.px-6.py-3.bg-primary.text-white.font-semibold.rounded-button.hover\\:bg-white:
 
 /* Custom hover text color for Contact Us button */
 a.px-6.py-3.bg-white.text-primary.font-semibold.rounded-button.hover\\:bg-primary\\/90:hover {
-  color: black !important;}
+  color: black !important;
+}
   
 </style>
 </head>
@@ -1061,83 +1061,95 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script id="contact-form-script">
 document.addEventListener('DOMContentLoaded', function() {
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function(e) {
-e.preventDefault();
-// Form validation
-const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const subject = document.getElementById('subject').value;
-const message = document.getElementById('message').value;
-const privacy = contactForm.querySelector('input[name="privacy"]').checked;
-let isValid = true;
-if (!name) {
-isValid = false;
-document.getElementById('name').classList.add('border-red-500');
-} else {
-document.getElementById('name').classList.remove('border-red-500');
-}
-if (!email || !email.includes('@')) {
-isValid = false;
-document.getElementById('email').classList.add('border-red-500');
-} else {
-document.getElementById('email').classList.remove('border-red-500');
-}
-if (!subject) {
-isValid = false;
-document.getElementById('subject').classList.add('border-red-500');
-} else {
-document.getElementById('subject').classList.remove('border-red-500');
-}
-if (!message) {
-isValid = false;
-document.getElementById('message').classList.add('border-red-500');
-} else {
-document.getElementById('message').classList.remove('border-red-500');
-}
-if (!privacy) {
-isValid = false;
-contactForm.querySelector('.custom-checkbox').classList.add('text-red-500');
-} else {
-contactForm.querySelector('.custom-checkbox').classList.remove('text-red-500');
-}
-if (isValid) {
-// Simulate form submission
-const submitButton = contactForm.querySelector('button[type="submit"]');
-submitButton.disabled = true;
-submitButton.innerHTML = 'Sending...';
-<!-- Reset form after 2 seconds (simulating API call) -->
-setTimeout(function() {
-contactForm.reset();
-submitButton.disabled = false;
-submitButton.innerHTML = 'Send Message';
-<!-- Show success message -->
-alert('Thank you for your message. We will get back to you soon!');
-}, 2000);
-}
-});
+  const contactForm = document.getElementById('contact-form');
+  if (!contactForm) return; // guard
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Form validation
+    const nameEl = document.getElementById('name');
+    const emailEl = document.getElementById('email');
+    const subjectEl = document.getElementById('subject');
+    const messageEl = document.getElementById('message');
+
+    const name = nameEl ? nameEl.value : '';
+    const email = emailEl ? emailEl.value : '';
+    const subject = subjectEl ? subjectEl.value : '';
+    const message = messageEl ? messageEl.value : '';
+    const privacy = !!contactForm.querySelector('input[name="privacy"]') && contactForm.querySelector('input[name="privacy"]').checked;
+
+    let isValid = true;
+    if (!name) {
+      isValid = false;
+      nameEl && nameEl.classList.add('border-red-500');
+    } else {
+      nameEl && nameEl.classList.remove('border-red-500');
+    }
+    if (!email || !email.includes('@')) {
+      isValid = false;
+      emailEl && emailEl.classList.add('border-red-500');
+    } else {
+      emailEl && emailEl.classList.remove('border-red-500');
+    }
+    if (!subject) {
+      isValid = false;
+      subjectEl && subjectEl.classList.add('border-red-500');
+    } else {
+      subjectEl && subjectEl.classList.remove('border-red-500');
+    }
+    if (!message) {
+      isValid = false;
+      messageEl && messageEl.classList.add('border-red-500');
+    } else {
+      messageEl && messageEl.classList.remove('border-red-500');
+    }
+    if (!privacy) {
+      isValid = false;
+      contactForm.querySelector('.custom-checkbox') && contactForm.querySelector('.custom-checkbox').classList.add('text-red-500');
+    } else {
+      contactForm.querySelector('.custom-checkbox') && contactForm.querySelector('.custom-checkbox').classList.remove('text-red-500');
+    }
+    if (isValid) {
+      // Simulate form submission
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+      // Reset form after 2 seconds (simulating API call)
+      setTimeout(function() {
+        contactForm.reset();
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Message';
+        }
+        // Show success message
+        alert('Thank you for your message. We will get back to you soon!');
+      }, 2000);
+    }
+  });
 });
 </script>
 <script id="cookie-consent-script">
 document.addEventListener('DOMContentLoaded', function() {
-const cookieConsent = document.getElementById('cookie-consent');
-const acceptCookies = document.getElementById('accept-cookies');
-const customizeCookies = document.getElementById('customize-cookies');
-<!-- Check if user has already accepted cookies -->
-const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-if (!cookiesAccepted) {
-cookieConsent.style.display = 'block';
-}
-acceptCookies.addEventListener('click', function() {
-localStorage.setItem('cookiesAccepted', 'true');
-cookieConsent.style.display = 'none';
-});
-customizeCookies.addEventListener('click', function() {
-// In a real implementation, this would open a modal with cookie preferences
-alert('Cookie preferences would be shown here in a real implementation.');
-localStorage.setItem('cookiesAccepted', 'true');
-cookieConsent.style.display = 'none';
-});
+  const cookieConsent = document.getElementById('cookie-consent');
+  const acceptCookies = document.getElementById('accept-cookies');
+  const customizeCookies = document.getElementById('customize-cookies');
+  // Check if user has already accepted cookies
+  const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+  if (!cookiesAccepted && cookieConsent) {
+    cookieConsent.style.display = 'block';
+  }
+  acceptCookies && acceptCookies.addEventListener('click', function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieConsent && (cookieConsent.style.display = 'none');
+  });
+  customizeCookies && customizeCookies.addEventListener('click', function() {
+    // In a real implementation, this would open a modal with cookie preferences
+    alert('Cookie preferences would be shown here in a real implementation.');
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieConsent && (cookieConsent.style.display = 'none');
+  });
 });
 </script>
 <!-- About Page -->
@@ -1318,7 +1330,7 @@ Sustainable Growth
 <section class="py-20 bg-gradient-to-br from-primary/5 to-skyblue/5">
 <div class="container mx-auto px-4">
 <div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Global Footprint</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Global Footprint</h2>
 <div class="w-20 h-1 bg-skyblue mx-auto mb-8"></div>
 </div>
 <div class="relative h-[600px] rounded-xl overflow-hidden shadow-xl mb-12">
@@ -1516,6 +1528,4 @@ window.scrollTo(0, 0);
 }
 </style>
 </body>
-</html>
-</html>
 </html>
