@@ -162,6 +162,22 @@ a.px-6.py-3.bg-white.text-primary.font-semibold.rounded-button.hover\\:bg-primar
 }
   
 </style>
+<!-- Ensure page can always scroll and enable smooth/touch scrolling -->
+<style>
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+/* Make large decorative full-screen overlays ignore pointer events
+   so they don't intercept touch/mouse events and block scrolling. */
+.page-bg-overlay {
+  pointer-events: none;
+}
+</style>
 </head>
 <body class="bg-white">
 <!-- Header & Navigation -->
@@ -387,7 +403,8 @@ Our Companies
 </div>
 <!-- Hero Section -->
 <section class="w-full pt-24 relative">
-<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/30" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20business%20skyline%20with%20global%20corporate%20buildings%20and%20business%20professionals%20in%20a%20meeting%2C%20soft%20lighting%2C%20gradient%20blue%20background%2C%20high-end%20corporate%20atmosphere%2C%20global%20business%20concept%2C%20professional%20photography%20style&width=1920&height=1080&seq=strathwell1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<!-- add page-bg-overlay so this full-screen background doesn't block scroll -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/30 page-bg-overlay" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20business%20skyline%20with%20global%20corporate%20buildings%20and%20business%20professionals%20in%20a%20meeting%2C%20soft%20lighting%2C%20gradient%20blue%20background%2C%20high-end%20corporate%20atmosphere%2C%20global%20business%20concept%2C%20professional%20photography%20style&width=1920&height=1080&seq=strathwell1&orientation=landscape'); background-size: cover; background-position: center;"></div>
 <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
 <div class="max-w-3xl">
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-lg" data-translate="Empowering Global Synergy">Empowering Global Synergy</h1>
@@ -1179,7 +1196,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="about-page" class="hidden">
 <!-- Hero Section -->
 <section class="pt-24 relative">
-<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/30" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20corporate%20cityscape%20with%20interconnected%20business%20buildings%2C%20professional%20architectural%20photography%2C%20dramatic%20lighting%2C%20global%20business%20concept&width=1920&height=1080&seq=strathwell_about_hero&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<!-- add page-bg-overlay here too -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/30 page-bg-overlay" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20corporate%20cityscape%20with%20interconnected%20business%20buildings%2C%20professional%20architectural%20photography%2C%20dramatic%20lighting%2C%20global%20business%20concept&width=1920&height=1080&seq=strathwell_about_hero&orientation=landscape'); background-size: cover; background-position: center;"></div>
 <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
 <div class="max-w-4xl">
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Built to Bridge Industries. Powered to Scale Globally.</h1>
@@ -1357,7 +1375,8 @@ Sustainable Growth
 <div class="w-20 h-1 bg-skyblue mx-auto mb-8"></div>
 </div>
 <div class="relative h-[600px] rounded-xl overflow-hidden shadow-xl mb-12">
-<div class="absolute inset-0" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
+<!-- add page-bg-overlay so this background image doesn't capture pointer events -->
+<div class="absolute inset-0 page-bg-overlay" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
 <div class="absolute bottom-0 left-0 right-0 p-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
