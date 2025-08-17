@@ -1441,21 +1441,71 @@ Contact Us
 </div>
 <script id="about-page-script">
 document.addEventListener('DOMContentLoaded', function() {
-const aboutPageLink = document.querySelector('a[href="/about.html"]');
-const aboutPage = document.getElementById('about-page');
-const mainContent = document.querySelectorAll('body > *:not(#about-page)');
-aboutPageLink.addEventListener('click', function(e) {
-e.preventDefault();
-mainContent.forEach(element => {
-if (element !== aboutPage) {
-element.style.display = 'none';
-}
-});
-aboutPage.classList.remove('hidden');
-window.scrollTo(0, 0);
-});
+  const aboutPageLink = document.querySelector('a[href="/about.html"]');
+  const aboutPage = document.getElementById('about-page');
+  const mainContent = document.querySelectorAll('body > *:not(#about-page)');
+
+  // Guard: if the link isn't present do nothing (prevents a JS exception that can stop other scripts)
+  if (!aboutPageLink) {
+    // nothing to wire up — safe exit
+    return;
+  }
+
+  aboutPageLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    mainContent.forEach(element => {
+      if (element !== aboutPage) {
+        element.style.display = 'none';
+      }
+    });
+    aboutPage.classList.remove('hidden');
+    window.scrollTo(0, 0);
+  });
 });
 </script>
+
+<!-- Diagnostic / soft-fix for "page frozen" caused by overlay elements -->
+<script id="overlay-debug-fix">
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const elems = Array.from(document.body.querySelectorAll('*'));
+
+    const blockers = elems.filter(el => {
+      const cs = window.getComputedStyle(el);
+      if (!el.offsetParent && cs.position !== 'fixed' && cs.position !== 'absolute') return false; // invisible or not positioned
+      // consider positioned elements with large z-index that cover a large fraction of the viewport
+      const rect = el.getBoundingClientRect();
+      const area = rect.width * rect.height;
+      const viewArea = vw * vh;
+      const covers = (rect.top <= 0 && rect.left <= 0 && rect.right >= vw && rect.bottom >= vh)
+                    || (area / viewArea) > 0.5; // covers whole viewport or >50% area
+      const isOverlay = (cs.position === 'fixed' || cs.position === 'absolute') && covers;
+      return isOverlay;
+    });
+
+    if (blockers.length) {
+      console.warn('[overlay-debug-fix] Found potential blocking overlays:', blockers);
+      blockers.forEach((el, idx) => {
+        // mark and make non-interactive so page responds again
+        el.classList.add('overlay-debugged');
+        el.style.pointerEvents = 'none';
+        el.style.touchAction = 'auto';
+        // add a faint red outline for debugging (remove in production)
+        el.style.outline = '2px dashed rgba(255,0,0,0.25)';
+      });
+      console.info('[overlay-debug-fix] pointer-events disabled on suspected overlays. Inspect elements with class .overlay-debugged and remove or add .page-bg-overlay to fix permanently.');
+    } else {
+      console.info('[overlay-debug-fix] no full-screen blocking overlays detected.');
+    }
+  } catch (err) {
+    // don't let this script throw and block other JS
+    console.error('[overlay-debug-fix] error', err);
+  }
+});
+</script>
+
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>

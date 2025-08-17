@@ -491,7 +491,6 @@ Our Companies
 </div>
 </div>
 </div>
-</div>
 </section>
 <!-- Filter Tags Section -->
 <section class="py-6 border-b border-gray-200">
@@ -969,87 +968,116 @@ Showing <span class="font-medium">1-12</span> of <span class="font-medium">36</s
 <!-- Scripts -->
 <script id="mobile-menu-script">
 document.addEventListener('DOMContentLoaded', function() {
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
-const mobileDropdown = document.getElementById('mobile-dropdown');
-mobileMenuButton.addEventListener('click', function() {
-mobileMenu.classList.toggle('hidden');
-const icon = mobileMenuButton.querySelector('i');
-if (mobileMenu.classList.contains('hidden')) {
-icon.classList.remove('ri-close-line');
-icon.classList.add('ri-menu-line');
-} else {
-icon.classList.remove('ri-menu-line');
-icon.classList.add('ri-close-line');
-}
-});
-mobileDropdownButton.addEventListener('click', function() {
-mobileDropdown.classList.toggle('hidden');
-const icon = mobileDropdownButton.querySelector('i');
-if (mobileDropdown.classList.contains('hidden')) {
-icon.classList.remove('ri-arrow-up-s-line');
-icon.classList.add('ri-arrow-down-s-line');
-} else {
-icon.classList.remove('ri-arrow-down-s-line');
-icon.classList.add('ri-arrow-up-s-line');
-}
-});
-const dateRangePicker = document.getElementById('date-range-picker');
-const dateRangeText = document.getElementById('date-range-text');
-const applyDateRange = document.getElementById('apply-date-range');
-const clearDateRange = document.getElementById('clear-date-range');
-const dateRadios = document.querySelectorAll('input[name="date-range"]');
-const dateFrom = document.getElementById('date-from');
-const dateTo = document.getElementById('date-to');
-// Set default dates
-const today = new Date();
-dateTo.valueAsDate = today;
-const oneMonthAgo = new Date();
-oneMonthAgo.setMonth(today.getMonth() - 1);
-dateFrom.valueAsDate = oneMonthAgo;
-dateRangeButton.addEventListener('click', function() {
-dateRangePicker.style.display = dateRangePicker.style.display === 'block' ? 'none' : 'block';
-});
-// Close the date picker when clicking outside
-document.addEventListener('click', function(event) {
-if (!dateRangeButton.contains(event.target) && !dateRangePicker.contains(event.target)) {
-dateRangePicker.style.display = 'none';
-}
-});
-applyDateRange.addEventListener('click', function() {
-let selectedOption;
-dateRadios.forEach(radio => {
-if (radio.checked) {
-selectedOption = radio.value;
-}
-});
-if (selectedOption === 'all') {
-dateRangeText.textContent = 'All Time';
-} else if (selectedOption === 'week') {
-dateRangeText.textContent = 'Past Week';
-} else if (selectedOption === 'month') {
-dateRangeText.textContent = 'Past Month';
-} else if (selectedOption === 'year') {
-dateRangeText.textContent = 'Past Year';
-} else {
-// Custom date range
-if (dateFrom.value && dateTo.value) {
-const fromDate = new Date(dateFrom.value);
-const toDate = new Date(dateTo.value);
-dateRangeText.textContent = `${fromDate.toLocaleDateString()} - ${toDate.toLocaleDateString()}`;
-}
-}
-dateRangePicker.style.display = 'none';
-// Simulate loading state
-simulateLoading();
-});
-clearDateRange.addEventListener('click', function() {
-dateRadios[0].checked = true; // Select "All Time"
-dateFrom.value = '';
-dateTo.value = '';
-dateRangeText.textContent = 'All Time';
-});
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+  const mobileDropdown = document.getElementById('mobile-dropdown');
+
+  // Guard mobile menu toggle
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileMenuButton.querySelector('i');
+      if (icon) {
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('ri-close-line');
+          icon.classList.add('ri-menu-line');
+        } else {
+          icon.classList.remove('ri-menu-line');
+          icon.classList.add('ri-close-line');
+        }
+      }
+    });
+  }
+
+  // Guard mobile dropdown toggle
+  if (mobileDropdownButton && mobileDropdown) {
+    mobileDropdownButton.addEventListener('click', function() {
+      mobileDropdown.classList.toggle('hidden');
+      const icon = mobileDropdownButton.querySelector('i');
+      if (icon) {
+        if (mobileDropdown.classList.contains('hidden')) {
+          icon.classList.remove('ri-arrow-up-s-line');
+          icon.classList.add('ri-arrow-down-s-line');
+        } else {
+          icon.classList.remove('ri-arrow-down-s-line');
+          icon.classList.add('ri-arrow-up-s-line');
+        }
+      }
+    });
+  }
+
+  // Date range controls — obtain elements safely
+  const dateRangeButton = document.getElementById('date-range-button'); // <-- added missing declaration
+  const dateRangePicker = document.getElementById('date-range-picker');
+  const dateRangeText = document.getElementById('date-range-text');
+  const applyDateRange = document.getElementById('apply-date-range');
+  const clearDateRange = document.getElementById('clear-date-range');
+  const dateRadios = document.querySelectorAll('input[name="date-range"]');
+  const dateFrom = document.getElementById('date-from');
+  const dateTo = document.getElementById('date-to');
+
+  // Set default dates safely
+  try {
+    const today = new Date();
+    if (dateTo) dateTo.valueAsDate = today;
+    const oneMonthAgo = new Date();
+    oneMonthAgo.setMonth(today.getMonth() - 1);
+    if (dateFrom) dateFrom.valueAsDate = oneMonthAgo;
+  } catch (err) {
+    // ignore date setting errors
+    console.warn('date init error', err);
+  }
+
+  if (dateRangeButton && dateRangePicker) {
+    dateRangeButton.addEventListener('click', function() {
+      dateRangePicker.style.display = dateRangePicker.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  // Close the date picker when clicking outside — guard references
+  document.addEventListener('click', function(event) {
+    if (dateRangePicker && dateRangeButton) {
+      if (!dateRangeButton.contains(event.target) && !dateRangePicker.contains(event.target)) {
+        dateRangePicker.style.display = 'none';
+      }
+    }
+  });
+
+  if (applyDateRange && dateRangePicker && dateRangeText && dateRadios) {
+    applyDateRange.addEventListener('click', function() {
+      let selectedOption;
+      dateRadios.forEach(radio => { if (radio.checked) selectedOption = radio.value; });
+      if (selectedOption === 'all') {
+        dateRangeText.textContent = 'All Time';
+      } else if (selectedOption === 'week') {
+        dateRangeText.textContent = 'Past Week';
+      } else if (selectedOption === 'month') {
+        dateRangeText.textContent = 'Past Month';
+      } else if (selectedOption === 'year') {
+        dateRangeText.textContent = 'Past Year';
+      } else {
+        if (dateFrom && dateTo && dateFrom.value && dateTo.value) {
+          const fromDate = new Date(dateFrom.value);
+          const toDate = new Date(dateTo.value);
+          dateRangeText.textContent = `${fromDate.toLocaleDateString()} - ${toDate.toLocaleDateString()}`;
+        }
+      }
+      dateRangePicker.style.display = 'none';
+      // Simulate loading state
+      if (typeof simulateLoading === 'function') simulateLoading();
+    });
+  }
+
+  if (clearDateRange && dateRadios && dateFrom && dateTo && dateRangeText) {
+    clearDateRange.addEventListener('click', function() {
+      if (dateRadios.length) dateRadios[0].checked = true;
+      dateFrom.value = '';
+      dateTo.value = '';
+      dateRangeText.textContent = 'All Time';
+    });
+  }
+
 });
 </script>
 <script id="search-filter-script">
@@ -1063,102 +1091,3 @@ const newsGrid = document.getElementById('news-grid');
 const emptyState = document.getElementById('empty-state');
 const loadingState = document.getElementById('loading-state');
 const filterButtons = document.querySelectorAll('button[class*="rounded-full"]');
-// Function to simulate loading state
-window.simulateLoading = function() {
-newsGrid.style.display = 'none';
-emptyState.style.display = 'none';
-loadingState.style.display = 'grid';
-setTimeout(function() {
-loadingState.style.display = 'none';
-// Random chance to show empty state for demo purposes
-if (Math.random() > 0.9) {
-emptyState.style.display = 'block';
-} else {
-newsGrid.style.display = 'grid';
-}
-}, 1000);
-};
-// Event listeners for filters
-searchInput.addEventListener('keypress', function(e) {
-if (e.key === 'Enter') {
-simulateLoading();
-}
-});
-categoryFilter.addEventListener('change', function() {
-simulateLoading();
-});
-sortOrder.addEventListener('change', function() {
-simulateLoading();
-});
-itemsPerPage.addEventListener('change', function() {
-simulateLoading();
-});
-clearFiltersBtn.addEventListener('click', function() {
-searchInput.value = '';
-categoryFilter.selectedIndex = 0;
-sortOrder.selectedIndex = 0;
-itemsPerPage.selectedIndex = 0;
-document.getElementById('date-range-text').textContent = 'All Time';
-filterButtons[0].classList.add('bg-primary', 'text-white');
-filterButtons[0].classList.remove('bg-white', 'border', 'border-gray-300', 'text-gray-600');
-for (let i = 1; i < filterButtons.length; i++) {
-filterButtons[i].classList.remove('bg-primary', 'text-white');
-filterButtons[i].classList.add('bg-white', 'border', 'border-gray-300', 'text-gray-600');
-}
-simulateLoading();
-});
-// Filter tag buttons
-filterButtons.forEach(button => {
-button.addEventListener('click', function() {
-filterButtons.forEach(btn => {
-btn.classList.remove('bg-primary', 'text-white');
-btn.classList.add('bg-white', 'border', 'border-gray-300', 'text-gray-600');
-});
-this.classList.remove('bg-white', 'border', 'border-gray-300', 'text-gray-600');
-this.classList.add('bg-primary', 'text-white');
-simulateLoading();
-});
-});
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Desktop dropdown toggle for "Our Companies"
-  const dropdownButtons = document.querySelectorAll('.dropdown > button');
-  dropdownButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      const dropdownContent = this.nextElementSibling;
-      if (!dropdownContent) return;
-      const isVisible = dropdownContent.style.display === 'block';
-      // Close all dropdowns
-      document.querySelectorAll('.dropdown-content').forEach(dc => dc.style.display = 'none');
-      if (!isVisible) {
-        dropdownContent.style.display = 'block';
-      }
-    });
-  });
-
-  // Close dropdown if clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown-content').forEach(dc => dc.style.display = 'none');
-    }
-  });
-
-  // Mobile dropdown toggle (existing)
-  const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
-  const mobileDropdown = document.getElementById('mobile-dropdown');
-  if (mobileDropdownButton && mobileDropdown) {
-    mobileDropdownButton.addEventListener('click', function() {
-      if (mobileDropdown.classList.contains('hidden')) {
-        mobileDropdown.classList.remove('hidden');
-      } else {
-        mobileDropdown.classList.add('hidden');
-      }
-    });
-  }
-});
-</script>
-</body>
-</html>
