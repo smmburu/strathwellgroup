@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -386,7 +385,6 @@ Our Companies
 </nav>
 </div>
 </div>
-</header>
 <!-- Hero Section -->
 <section class="w-full pt-24 relative">
 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/30" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20business%20skyline%20with%20global%20corporate%20buildings%20and%20business%20professionals%20in%20a%20meeting%2C%20soft%20lighting%2C%20gradient%20blue%20background%2C%20high-end%20corporate%20atmosphere%2C%20global%20business%20concept%2C%20professional%20photography%20style&width=1920&height=1080&seq=strathwell1&orientation=landscape'); background-size: cover; background-position: center;"></div>
@@ -707,7 +705,6 @@ With a sharp focus on financial governance, capital efficiency, and transparent 
 </div>
 </div>
 </div>
-</div>
 </section>
 <!-- News Section -->
 <section id="news" class="py-20 bg-gray-50">
@@ -901,7 +898,7 @@ View All News
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 <div>
 <a href="#" class="inline-block mb-6">
-  <img src="assets/strathwell-logo-inverted.png" alt="Strathwell Logo Inverted" class="h-10">
+  <img src="assets/strathwell-logo.png" alt="Strathwell Logo Inverted" class="h-10" style="filter: invert(1);">
 </a>
 <p class="text-white/80 mb-6">A globally present holding company with a vision to create sustainable value through strategic investments and operational excellence.</p>
 <div class="flex space-x-4">
@@ -936,6 +933,7 @@ View All News
 <li><a href="https://festcareinsurance.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Festcare Insurance Agency</a></li>
 <li><a href="https://kenyafmcg.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">KENYA FMCG WHOLESALERS AND DISTRIBUTORS NETWORK LIMITED</a></li>
 <li><a href="https://fadanconsultantltd.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Fadan Consultant Ltd</a></li>
+<li><a href="https://silverfestsolutions.netlify.app/" target="_blank" class="text-white/80 hover:text-white transition-colors">Silverfest Cleaning Solutions</a></li>
 </ul>
 </div>
 <div>
@@ -1108,12 +1106,12 @@ if (isValid) {
 const submitButton = contactForm.querySelector('button[type="submit"]');
 submitButton.disabled = true;
 submitButton.innerHTML = 'Sending...';
-// Reset form after 2 seconds (simulating API call)
+<!-- Reset form after 2 seconds (simulating API call) -->
 setTimeout(function() {
 contactForm.reset();
 submitButton.disabled = false;
 submitButton.innerHTML = 'Send Message';
-// Show success message
+<!-- Show success message -->
 alert('Thank you for your message. We will get back to you soon!');
 }, 2000);
 }
@@ -1125,7 +1123,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const cookieConsent = document.getElementById('cookie-consent');
 const acceptCookies = document.getElementById('accept-cookies');
 const customizeCookies = document.getElementById('customize-cookies');
-// Check if user has already accepted cookies
+<!-- Check if user has already accepted cookies -->
 const cookiesAccepted = localStorage.getItem('cookiesAccepted');
 if (!cookiesAccepted) {
 cookieConsent.style.display = 'block';
@@ -1518,4 +1516,6 @@ window.scrollTo(0, 0);
 }
 </style>
 </body>
+</html>
+</html>
 </html>
